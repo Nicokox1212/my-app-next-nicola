@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,15 +20,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="pl">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <header>
+          <nav>
+            <Link href="/about">O nas</Link><br></br>
+            <Link href="/contact">Kontakt</Link>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer>(c) 2025 Firma Nicola Allocca</footer>
       </body>
     </html>
   );
