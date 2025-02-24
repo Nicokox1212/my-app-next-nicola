@@ -1,4 +1,7 @@
-// app/not-found.tsx
 export default function NotFound() {
-    return <h1>Strona nie znaleziona</h1>;
-  }
+  return (
+    <div style={{ padding: '1rem' }}>
+      <h1>Strona nie znaleziona</h1>
+    </div>
+  );
+}
