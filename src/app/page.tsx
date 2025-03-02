@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Witamy w Next.js 13+</h1>
-      <p>To jest strona główna.</p>
-    </div>
+    <section className="about-sekcja">
+      <h1 className="tytul">Witamy na stronie głownej</h1>
+      <p className="opis">prosimy nawigowac się po stronie samemu z góry dzieki</p>
+    </section>
   );
 }

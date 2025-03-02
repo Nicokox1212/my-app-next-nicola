@@ -1,8 +1,8 @@
 export default function Onas() {
   return (
-    <div style={{ padding: '1rem' }}>
-      <h1>O nas</h1>
-      <p>Firma stworzona w 1800 roku przez Nicola Allocca zajmująca się produkcją aut</p>
-    </div>
+    <section className="about-sekcja">
+      <h1 className="tytul">O nas</h1>
+      <p className="opis">Jesteśmy firmą, która specjalizuje się w tworzeniu nowoczesnych aplikacji...</p>
+    </section>
   );
 }

@@ -1,21 +1,102 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.tlo-gradient {
+  background: linear-gradient(to right, #60a5fa, #3b82f6, #2563eb);
+  min-height: 100vh;
+}
+
+.naglowek {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  color: white;
+}
+
+.nawigacja {
+  display: flex;
+  gap: 16px;
+}
+
+.stopka {
+  text-align: center;
+  padding: 16px;
+  color: white;
+}
+
+
+.formularz {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.tytul {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.formularz-pola {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-weight: medium;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.textarea {
+  height: 120px;
+}
+
+.przycisk {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.przycisk:hover {
+  background-color: #1e40af;
+}
+
+
+
+.about-sekcja {
+  text-align: center; 
+  margin: 40px 0;      
+}
+
+.tytul {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.opis {
+  font-size: 1.2rem;
+  color: white;
 }

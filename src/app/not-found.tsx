@@ -1,7 +1,3 @@
 export default function NotFound() {
-  return (
-    <div style={{ padding: '1rem' }}>
-      <h1>Strona nie znaleziona</h1>
-    </div>
-  );
+  return <h1 className="text-center text-2xl">Strona nie znaleziona</h1>;
 }
