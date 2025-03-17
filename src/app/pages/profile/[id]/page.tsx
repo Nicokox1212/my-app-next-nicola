@@ -1,4 +1,4 @@
-import { users } from '../../../utils/users';
+import { users , addresses , countries} from '../../../utils/users';
 
 interface PageProps {
   params: { id: string };
@@ -23,6 +23,20 @@ export default function ProfilePage({ params, searchParams }: PageProps) {
     detailsToDisplay = [detail];
   }
 
+  console.log('addresses', addresses)
+  console.log('user', user)
+ // const tmpFunc = () =>
+
+  const userAddress = addresses.find(
+    (element, index) => (element.id === user.addressId)
+  )
+
+  console.log('userAddress')
+
+  const userCountry = countries.find(
+    (element) => element.id === userAddress?.countryId
+  )
+
   return (
     <div>
       <h1>{user.name}</h1>
@@ -34,8 +48,26 @@ export default function ProfilePage({ params, searchParams }: PageProps) {
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </li>
+
         ))}
+
+
       </ul>
+
+      {userAddress && (
+                <div className='bg-gray-300 p-6 rounded-lg mt-4'>
+                    <h2 className='text-2xl font-bold'>Address:</h2>
+                    {userAddress?.customFields?.company && (
+                        <p>{`Frima: ${userAddress.customFields.company}`}</p>
+                    )}
+                    {userAddress?.customFields?.vatId && (
+                        <p>{`Nip: ${userAddress.customFields.vatId}`}</p>
+                    )}
+                    <p>{userCountry?.label}</p>
+                    <p>{userAddress.zipCode} {userAddress.city}</p>
+                    <p>{userAddress.street} {userAddress.buildNumber}</p>
+                </div>
+            )}
     </div>
   );
 }
