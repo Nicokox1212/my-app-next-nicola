@@ -5,7 +5,7 @@ import { useState } from 'react';
 import './globals.css';
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false); // Stan do kontrolowania otwarcia menu
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   return (
     <header className="naglowek">
