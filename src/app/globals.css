@@ -13,28 +13,72 @@ a {
   text-decoration: none;
 }
 
-
 .tlo-gradient {
   background: linear-gradient(to right, #60a5fa, #3b82f6, #2563eb);
   min-height: 100vh;
 }
 
+
 .naglowek {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 16px;
-  color: white;
+  color: black;
+  background-color: #2563eb; 
 }
 
 .nawigacja {
-  display: flex;
-  gap: 16px;
+  display: flex; 
+  gap: 16px; 
+  align-items: center; 
 }
+
+.nawigacja li {
+  list-style: none;
+  display: inline-block; 
+  margin-right: 16px;
+}
+
+.nawigacja li:last-child {
+  margin-right: 0;
+}
+
+
+.dark-nav a {
+  color: #fbbf24; 
+}
+
+
+.dark-header {
+  background-color: #1a1a1a; 
+  color: white;
+}
+
+
+.nawigacja a {
+  color: black; 
+}
+
 
 .stopka {
   text-align: center;
   padding: 16px;
   color: white;
+  background-color: #2563eb; 
+}
+
+.stopka-siatka {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+}
+
+.dark-footer {
+  background-color: #333; 
 }
 
 
@@ -84,99 +128,224 @@ a {
 }
 
 
-
-.about-sekcja {
-  text-align: center; 
-  margin: 40px 0;      
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  z-index: 999;
+  margin-left: 16px; 
 }
 
-.tytul {
-  font-size: 2rem;
-  font-weight: bold;
+.dark .dark-toggle {
+  color: #fbbf24; 
 }
 
-.opis {
-  font-size: 1.2rem;
+.dark body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark .stopka-siatka {
+  background-color: #1a1a1a; 
+}
+
+.dark .panel,
+.dark .konto-panel {
+  background: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
+}
+
+.dark .przycisk {
+  background-color: #333;
   color: white;
 }
 
+.dark .przycisk:hover {
+  background-color: #444;
+}
 
-.uklad {
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+  margin: 50px auto;
+  position: relative;
+  height: 500px;
+}
+
+
+.embla__container {
   display: flex;
-  min-height: 80vh;
+  width: 100%;
+  height: 100%;  
 }
 
-.panel {
-  width: 220px;
-  padding: 20px;
-  border-right: 1px solid #ddd;
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6, #2563eb);
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;  
+  padding: 10px;
 }
 
-.panel nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.embla__slide img {
+  width: 100%;        
+  height: 100%;       
+  object-fit: contain; 
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-.panel nav ul li {
-  margin-bottom: 15px;
+
+.embla__slide:hover img {
+  transform: scale(1.05); 
 }
 
-.panel nav ul li a,
-.panel nav ul li span {
-  color: black;
-  text-decoration: none;
-  font-weight: normal;
-}
 
-.panel nav ul li span.aktywny {
-  font-weight: bold;
-}
+@media (max-width: 768px) {
+  .embla {
+    height: 300px; 
+  }
   
-.zawartosc {
-  flex: 1;
-  padding: 20px;
+
+  .embla__slide img {
+    object-fit: contain; 
+  }
 }
 
 
+.embla__slide:hover img {
+  transform: scale(1.05); 
+}
 
-
-
-.konto-uklad {
+.naglowek {
   display: flex;
-  min-height: 80vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
 }
 
-.konto-panel {
-  width: 220px;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu-and-toggle {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.przyciski-naglowka {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.dark .nawigacja a {
+  color: #fbbf24; 
+}
+
+.dark .nawigacja a:hover {
+  color: #ffea00; 
+}
+
+.dark .nawigacja {
+  color: white;
+}
+
+.hamburger {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nawigacja {
+    display: none;
+  }
+
+  .nawigacja.otwarte {
+    display: block;
+  }
+}
+
+.sekcja-powitalna {
+  position: relative;
+  height: 100vh; 
+  background-image: url('/hero.jpg'); 
+  background-attachment: fixed; 
+  background-size: cover; 
+  background-position: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 0; 
+}
+
+.sekcja-powitalna::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1; 
+}
+
+
+.tekst {
+  position: relative;
+  z-index: 2; 
+}
+
+.przyciski {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.przycisk.animowany {
+  transition: all 0.3s ease;
+}
+
+.przycisk.animowany:hover {
+  background-color: #1e3a8a;
+  transform: scale(1.05);
+}
+
+.przycisk.animowany.jasny {
+  background-color: #ffffff;
+  color: #2563eb;
+}
+
+.przycisk.animowany.jasny:hover {
+  background-color: #e0e7ff;
+}
+
+#gmail {
+  width: 16px;
+  height: 16px;
+}
+
+.stopka-siatka {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  background: #1e3a8a;
   padding: 20px;
-  border-right: 1px solid #ddd;
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6, #2563eb);
+  color: white;
 }
 
-.konto-panel nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.konto-panel nav ul li {
-  margin-bottom: 15px;
-}
-
-.konto-panel nav ul li a,
-.konto-panel nav ul li span {
-  color: black; /* tekst czarny */
-  text-decoration: none;
-  font-weight: normal;
-}
-
-.konto-panel nav ul li span.aktywny {
-  font-weight: bold;
-}
-
-.konto-zawartosc {
-  flex: 1;
-  padding: 20px;
+@media (max-width: 600px) {
+  .stopka-siatka {
+    flex-direction: column;
+    text-align: center;
+  }
 }
